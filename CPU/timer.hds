@@ -1,0 +1,64 @@
+# hades.models.Design file
+#  
+[name] timer
+[components]
+hades.models.gates.And2 Execute_HALT 19800 3600 @N 1001 1.0E-8
+hades.models.gates.Or2 Halt_Conditions 24600 3000 @N 1001 1.0E-8
+hades.models.flipflops.Dffr Delay_Reset 14400 21000 @N 1001 5.0E-9 4.0E-9 3.0E-9
+hades.models.io.Opin HALTED 40800 5400 @N 1001 5.0E-9
+hades.models.gates.BufferSmall Clock_Delay 26400 24600 @N 1001 1.0E-8
+hades.models.flipflops.Dffr Check_Reset 9000 21000 @N 1001 5.0E-9 4.0E-9 3.0E-9
+hades.models.io.Opin FETCH 40800 18300 @N 1001 5.0E-9
+hades.models.gates.Nand3 Fetch_next 21000 16800 @N 1001 1.0E-8
+hades.models.gates.Nor2 Inv_Clock_Slow 28800 24600 @N 1001 1.0E-8
+hades.models.io.Ipin nRESET_IN 5400 27000 @N 1001  U
+hades.models.flipflops.Dffr Do_not_Execute 27600 9600 @N 1001 5.0E-9 4.0E-9 3.0E-9
+hades.models.meta.Label i7 9600 4800 @N 1001 1 0 5 0 12 0.0 4 As\u0020a\u0020result\u002c\u0020the\u0020processor\u0020will\u0020stay\u0020in\u0020a\u0020defined\u0020state.
+hades.models.io.Ipin CLOCK 5400 20400 @N 1001 null U
+hades.models.meta.Label i6 9600 4200 @N 1001 1 0 5 0 12 0.0 4 3.\u0020When\u0020the\u0020processor\u0020is\u0020halted\u002c\u0020it\u0020sets\u0020nRESET_OUT\u0020to\u0020zero.
+hades.models.meta.Label i5 9600 3600 @N 1001 1 0 5 0 12 0.0 4 however\u002c\u0020if\u0020CONFLICT\u003d\u003d1\u002c\u0020it\u0020does\u0020not\u0020do\u0020so.
+hades.models.gates.InvSmall Not_Halted 34200 21000 @N 1001 5.0E-9
+hades.models.io.Opin nRESET_OUT 40800 22200 @N 1001 5.0E-9
+hades.models.meta.Label i4 9600 3000 @N 1001 1 0 5 0 12 0.0 4 2.\u0020It\u0020tries\u0020to\u0020pipeline\u0020the\u0020fetch\u0020and\u0020execute\u0020phases\u003b
+hades.models.meta.Label i3 3900 18750 @N 1001 3 22 5 16 12 0.0 4 CONFLICT
+hades.models.io.Constant1 i2 7200 22200 @N 1001
+hades.models.meta.Label i1 9600 2400 @N 1001 1 0 5 0 12 0.0 4 1.\u0020If\u0020a\u0020test\u0020does\u0020not\u0020succeed\u002c\u0020it\u0020skips\u0020the\u0020execution\u0020completely.
+hades.models.gates.And4 Execute_Conditions 34200 11700 @N 1001 1.0E-8
+hades.models.gates.And2 Reset_if_halted 36600 21000 @N 1001 1.0E-8
+hades.models.meta.Label i0 9600 1800 @N 1001 1 0 5 0 12 0.0 4 This\u0020timer\u0020has\u0020three\u0020extra\u0020features:
+hades.models.io.Ipin HALT 6000 5400 @N 1001 null U
+hades.models.gates.Nand2 Do_not_Execute_next 21000 10200 @N 1001 1.0E-8
+hades.models.gates.InvSmall Inv_Clock 22200 19800 @N 1001 5.0E-9
+hades.models.io.Ipin TEST_SUCCEEDS 5400 16800 @N 1001 null U
+hades.models.flipflops.Dffr Fetch 27600 16200 @N 1001 5.0E-9 4.0E-9 3.0E-9
+hades.models.gates.And4 Fetch_Conditions 34200 17100 @N 1001 1.0E-8
+hades.models.flipflops.Dffr Is_Halted 29400 3600 @N 1001 5.0E-9 4.0E-9 3.0E-9
+hades.models.io.Opin EXECUTE 40800 12900 @N 1001 5.0E-9
+hades.models.io.Constant1 CONFLICT1 4200 18000 @N 1001
+[end components]
+[signals]
+hades.signals.SignalStdLogic1164 n5_0_0_0_1 3 Execute_Conditions Y EXECUTE A Execute_HALT A 6 2 19200 1800 19200 4200 2 19200 4200 19800 4200 2 19200 1800 39000 1800 2 39000 12900 40800 12900 2 37800 12900 39000 12900 2 39000 12900 39000 1800 1 39000 12900 
+hades.signals.SignalStdLogic1164 n5_0_0_0_0 2 Do_not_Execute NQ Execute_Conditions B 1 2 34200 12600 31200 12600 0 
+hades.signals.SignalStdLogic1164 n0_0_0 3 nRESET_IN Y Check_Reset NR Delay_Reset NR 6 2 5400 27000 8400 27000 2 8400 27000 8400 25200 2 9000 25200 8400 25200 2 8400 27000 13800 27000 2 13800 27000 13800 25200 2 13800 25200 14400 25200 1 8400 27000 
+hades.signals.SignalStdLogic1164 n9 2 Halt_Conditions Y Is_Halted D 3 2 28200 4200 28800 4200 2 28800 4200 28800 5400 2 28800 5400 29400 5400 0 
+hades.signals.SignalStdLogic1164 n14_0 3 Inv_Clock_Slow Y Fetch_Conditions D Execute_Conditions D 5 2 33000 25800 33000 19200 2 33000 19200 33000 13800 2 33000 19200 34200 19200 2 33000 13800 34200 13800 2 33000 25800 32400 25800 1 33000 19200 
+hades.signals.SignalStdLogic1164 n8 2 Fetch_Conditions Y FETCH A 1 2 37800 18300 40800 18300 0 
+hades.signals.SignalStdLogic1164 n7 2 Not_Halted Y Reset_if_halted A 1 2 36000 21600 36600 21600 0 
+hades.signals.SignalStdLogic1164 n6 2 Execute_HALT Y Halt_Conditions B 1 2 23400 4800 24600 4800 0 
+hades.signals.SignalStdLogic1164 n5 3 TEST_SUCCEEDS Y Fetch_next B Do_not_Execute_next A 5 2 5400 16800 19800 16800 2 19800 16800 19800 18000 2 19800 18000 21000 18000 2 19800 16800 19800 10800 2 19800 10800 21000 10800 1 19800 16800 
+hades.signals.SignalStdLogic1164 n4 7 Delay_Reset Q Is_Halted NR Execute_Conditions C Fetch_Conditions C Fetch NR Do_not_Execute NR Reset_if_halted B 13 2 32400 18600 32400 13200 2 32400 13200 34200 13200 2 32400 22800 32400 18600 2 32400 18600 34200 18600 2 32400 22800 36600 22800 2 27000 22800 18000 22800 2 32400 22800 27000 22800 2 27000 22800 27000 20400 2 27000 20400 27600 20400 2 27000 7800 27000 13800 2 27000 13800 27600 13800 2 29400 7800 27000 7800 2 27000 20400 27000 13800 5 27000 13800 27000 22800 32400 18600 27000 20400 32400 22800 
+hades.signals.SignalStdLogic1164 n3 2 Clock_Delay Y Inv_Clock_Slow A 1 2 28200 25200 28800 25200 0 
+hades.signals.SignalStdLogic1164 n2 2 Reset_if_halted Y nRESET_OUT A 1 2 40200 22200 40800 22200 0 
+hades.signals.SignalStdLogic1164 n16 2 Do_not_Execute_next Y Do_not_Execute D 1 2 24600 11400 27600 11400 0 
+hades.signals.SignalStdLogic1164 n1 2 i2 Y Check_Reset D 1 2 9000 22800 8400 22800 0 
+hades.signals.SignalStdLogic1164 n15 2 Fetch_next Y Fetch D 1 2 24600 18000 27600 18000 0 
+hades.signals.SignalStdLogic1164 n0 2 HALT Y Execute_HALT B 1 2 6000 5400 19800 5400 0 
+hades.signals.SignalStdLogic1164 n14 2 CONFLICT1 Y Fetch_next C 1 2 5400 18600 21000 18600 0 
+hades.signals.SignalStdLogic1164 n13 4 Fetch Q Fetch_Conditions B Fetch_next A Do_not_Execute_next B 8 2 31800 18000 34200 18000 2 31800 18000 31800 15600 2 31800 15600 20400 15600 2 20400 15600 20400 12000 2 20400 12000 21000 12000 2 20400 15600 20400 17400 2 20400 17400 21000 17400 2 31800 18000 31200 18000 2 31800 18000 20400 15600 
+hades.signals.SignalStdLogic1164 n12 2 Check_Reset Q Delay_Reset D 1 2 12600 22800 14400 22800 0 
+hades.signals.SignalStdLogic1164 n11 4 Is_Halted Q HALTED A Halt_Conditions A Not_Halted A 11 2 38400 5400 33600 5400 2 33000 5400 33600 5400 2 33600 5400 33600 2400 2 33600 2400 24000 2400 2 24000 2400 24000 3600 2 24000 3600 24600 3600 2 40800 5400 38400 5400 2 38400 5400 38400 20400 2 38400 20400 33600 20400 2 33600 20400 33600 21600 2 33600 21600 34200 21600 2 38400 5400 33600 5400 
+hades.signals.SignalStdLogic1164 n10 3 Is_Halted NQ Fetch_Conditions A Execute_Conditions A 5 2 33000 6600 33600 6600 2 33600 12000 33600 17400 2 33600 17400 34200 17400 2 33600 6600 33600 12000 2 33600 12000 34200 12000 1 33600 12000 
+hades.signals.SignalStdLogic1164 n14_1_0_0_0 7 CLOCK Y Is_Halted C Check_Reset C Inv_Clock A Clock_Delay A Inv_Clock_Slow B Delay_Reset C 14 2 6600 6600 29400 6600 2 6600 20400 22200 20400 2 13200 26400 25800 26400 2 25800 25200 26400 25200 2 25800 25200 25800 26400 2 25800 26400 28800 26400 2 13200 24000 14400 24000 2 5400 20400 6600 20400 2 9000 24000 6600 24000 2 6600 24000 6600 20400 2 6600 24000 6600 26400 2 6600 26400 13200 26400 2 13200 26400 13200 24000 2 6600 6600 6600 20400 4 6600 20400 6600 24000 25800 26400 13200 26400 
+hades.signals.SignalStdLogic1164 n14_1_1 3 Inv_Clock Y Fetch C Do_not_Execute C 5 2 25200 12600 25200 19200 2 25200 19200 25200 20400 2 25200 20400 24000 20400 2 25200 12600 27600 12600 2 25200 19200 27600 19200 1 25200 19200 
+[end signals]
+[end]

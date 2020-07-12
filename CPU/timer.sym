@@ -1,0 +1,20 @@
+hades.symbols.BboxRectangle  0 0 4800 3000
+hades.symbols.Rectangle  0 0 4800 3000
+hades.symbols.PortLabel 4650 2550 3 nRESET_OUT
+hades.symbols.PortSymbol 4800 2400 nRESET_OUT
+hades.symbols.PortLabel 4650 1950 3 FETCH
+hades.symbols.PortSymbol 4800 1800 FETCH
+hades.symbols.PortLabel 4650 1350 3 EXECUTE
+hades.symbols.PortSymbol 4800 1200 EXECUTE
+hades.symbols.PortLabel 4650 750 3 HALTED
+hades.symbols.PortSymbol 4800 600 HALTED
+hades.symbols.PortLabel 150 2550 nRESET_IN
+hades.symbols.PortSymbol 0 2400 nRESET_IN
+hades.symbols.PortLabel 150 1950 CLOCK
+hades.symbols.PortSymbol 0 1800 CLOCK
+hades.symbols.PortLabel 150 1350 TEST_SUCCEEDS
+hades.symbols.PortSymbol 0 1200 TEST_SUCCEEDS
+hades.symbols.PortLabel 150 750 HALT
+hades.symbols.PortSymbol 0 600 HALT
+hades.symbols.InstanceLabel 150 2850 timer
+hades.symbols.ClassLabel 150 450 timer

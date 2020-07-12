@@ -1,0 +1,40 @@
+hades.symbols.BboxRectangle  0 0 4800 8400
+hades.symbols.Rectangle  0 0 4800 8400
+hades.symbols.PortLabel 4650 7950 3 CONDITION
+hades.symbols.PortSymbol 4800 7800 CONDITION
+hades.symbols.PortLabel 4650 7350 3 OPCODE
+hades.symbols.PortSymbol 4800 7200 OPCODE
+hades.symbols.PortLabel 4650 6750 3 ADDR_A
+hades.symbols.PortSymbol 4800 6600 ADDR_A
+hades.symbols.PortLabel 4650 6150 3 ADDR_B
+hades.symbols.PortSymbol 4800 6000 ADDR_B
+hades.symbols.PortLabel 4650 5550 3 ADDR_DEST
+hades.symbols.PortSymbol 4800 5400 ADDR_DEST
+hades.symbols.PortLabel 4650 4950 3 C32
+hades.symbols.PortSymbol 4800 4800 C32
+hades.symbols.PortLabel 4650 4350 3 nWE
+hades.symbols.PortSymbol 4800 4200 nWE
+hades.symbols.PortLabel 4650 3750 3 nRE
+hades.symbols.PortSymbol 4800 3600 nRE
+hades.symbols.PortLabel 4650 3150 3 POP
+hades.symbols.PortSymbol 4800 3000 POP
+hades.symbols.PortLabel 4650 2550 3 SET_F
+hades.symbols.PortSymbol 4800 2400 SET_F
+hades.symbols.PortLabel 4650 1950 3 DATABUS\u007cALU
+hades.symbols.PortSymbol 4800 1800 DATABUS|ALU
+hades.symbols.PortLabel 4650 1350 3 C\u007cREG
+hades.symbols.PortSymbol 4800 1200 C|REG
+hades.symbols.PortLabel 4650 750 3 HALT
+hades.symbols.PortSymbol 4800 600 HALT
+hades.symbols.PortLabel 150 3150 nRESET
+hades.symbols.PortSymbol 0 3000 nRESET
+hades.symbols.PortLabel 150 2550 CLOCK
+hades.symbols.PortSymbol 0 2400 CLOCK
+hades.symbols.PortLabel 150 1950 FETCH
+hades.symbols.PortSymbol 0 1800 FETCH
+hades.symbols.PortLabel 150 1350 EXECUTE
+hades.symbols.PortSymbol 0 1200 EXECUTE
+hades.symbols.PortLabel 150 750 INSTRUCTION
+hades.symbols.PortSymbol 0 600 INSTRUCTION
+hades.symbols.InstanceLabel 150 8250 instruction_decoder
+hades.symbols.ClassLabel 150 450 instruction_decoder

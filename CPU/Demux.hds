@@ -1,0 +1,20 @@
+# hades.models.Design file
+#  
+[name] Demux_1:2
+[components]
+hades.models.rtlib.io.OpinVector OUT_1 41400 20400 @N 1001 6 1.0E-9 0
+hades.models.rtlib.io.OpinVector OUT_0 41400 15600 @N 1001 6 1.0E-9 0
+hades.models.rtlib.logic.N1And i6 33600 12900 @N 1001 6 UUUUUU_B 1.0E-8
+hades.models.rtlib.logic.N1And i5 33600 17700 @N 1001 6 UUUUUU_B 1.0E-8
+hades.models.rtlib.io.IpinVector IN 24000 14400 @N 1001 6 UUUUUU_B 1.0E-9 0
+hades.models.gates.Inv i2 27600 10200 @N 1001 5.0E-9
+hades.models.io.Ipin F 24000 18600 @N 1001 null U
+[end components]
+[signals]
+hades.signals.SignalStdLogicVector n3 6 2 i5 Y OUT_1 A 2 2 35400 19500 35400 20400 2 35400 20400 41400 20400 0 
+hades.signals.SignalStdLogicVector n2 6 2 i6 Y OUT_0 A 2 2 35400 14700 35400 15600 2 35400 15600 41400 15600 0 
+hades.signals.SignalStdLogic1164 n0 3 F Y i2 A i5 A 6 2 24000 18600 26400 18600 2 26400 16800 26400 11400 2 26400 11400 27600 11400 2 26400 18600 26400 16800 2 26400 16800 34800 16800 2 34800 16800 34800 17700 1 26400 16800 
+hades.signals.SignalStdLogicVector n1_0 6 3 IN Y i6 B i5 B 8 2 24000 14400 25200 14400 2 25200 14400 25200 8700 2 25200 8700 36000 8700 2 36000 8700 36000 12900 2 25200 14400 25200 16200 2 25200 16200 34800 16200 2 34800 16200 36000 16200 2 36000 16200 36000 17700 1 25200 14400 
+hades.signals.SignalStdLogic1164 n2_1 2 i2 Y i6 A 2 2 30000 11400 34800 11400 2 34800 11400 34800 12900 0 
+[end signals]
+[end]
